@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Трезвость</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="center">
+        <h1 class="countdown-title">Я трезвый</h1>
+        <div id="countdown" class="countdown">
+            <div class="countdown-number">
+                <span class="days countdown-time"></span>
+                <span class="countdown-text">Дней</span>
+            </div>
+            <div class="countdown-number">
+                <span class="hours countdown-time"></span>
+                <span class="countdown-text">Часов</span>
+            </div>
+            <div class="countdown-number">
+                <span class="minutes countdown-time"></span>
+                <span class="countdown-text">Минут</span>
+            </div>
+            <div class="countdown-number">
+                <span class="seconds countdown-time"></span>
+                <span class="countdown-text">Секунд</span>
+            </div>
+        </div>
+        <p><a href="aff.html" class="countdown-title">Аффирмации</a></p>
+</div>
+
+    <script>
+        function timer() {
+            let dateNow = new Date();
+            let dateDecision = new Date(2021, 0, 3, 0, 0, 0);
+            let result = (dateNow - dateDecision) + 1000;
+            let seconds = Math.floor((result / 1000) % 60);
+            let minutes = Math.floor((result / 1000 / 60) % 60);
+            let hours = Math.floor((result / 1000 / 60 / 60) % 24);
+            let days = Math.floor(result / 1000 / 60 / 60 / 24);
+            if (seconds < 10) seconds = '0' + seconds;
+            if (minutes < 10) minutes = '0' + minutes;
+            if (hours < 10) hours = '0' + hours;
+            let elmnt = document.getElementById('timer');
+            let secondsElement = document.getElementsByClassName('seconds')[0]
+            let minutesElement = document.getElementsByClassName('minutes')[0]
+            let hoursElement = document.getElementsByClassName('hours')[0]
+            let daysElement = document.getElementsByClassName('days')[0]
+            secondsElement.innerHTML = seconds
+            minutesElement.innerHTML = minutes
+            hoursElement.innerHTML = hours
+            daysElement.innerHTML = days
+            setTimeout(timer, 1000);
+        }
+        window.onload = function () {
+            timer();
+        }
+    </script>
+</body>
+</html>
