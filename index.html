@@ -10,7 +10,7 @@
 
 <body>
 <div class="center">
-        <h1 class="countdown-title">Без вредных привычек</h1>
+        <h1 class="countdown-title">100 дней без вредных привычек</h1>
         <div id="countdown" class="countdown">
             <div class="countdown-number">
                 <span class="days countdown-time"></span>
@@ -35,7 +35,7 @@
     <script>
         function timer() {
             let dateNow = new Date();
-            let dateDecision = new Date(2021, 05, 14);
+            let dateDecision = new Date(2021, 05, 21);
             let result = (dateNow - dateDecision) + 1000;
             let seconds = Math.floor((result / 1000) % 60);
             let minutes = Math.floor((result / 1000 / 60) % 60);
