@@ -16,18 +16,6 @@
                 <span class="days countdown-time"></span>
                 <span class="countdown-text">Дней</span>
             </div>
-            <div class="countdown-number">
-                <span class="hours countdown-time"></span>
-                <span class="countdown-text">Часов</span>
-            </div>
-            <div class="countdown-number">
-                <span class="minutes countdown-time"></span>
-                <span class="countdown-text">Минут</span>
-            </div>
-            <div class="countdown-number">
-                <span class="seconds countdown-time"></span>
-                <span class="countdown-text">Секунд</span>
-            </div>
         </div>
         <p><a href="aff.html" class="countdown-title">Аффирмации</a></p>
 </div>
@@ -38,9 +26,6 @@
             let dateDecision = new Date(2021, 11, 11);
             let result = (dateNow - dateDecision) + 1000;
             let days = Math.floor(result / 1000 / 60 / 60 / 24);
-            if (seconds < 10) seconds = '0' + seconds;
-            if (minutes < 10) minutes = '0' + minutes;
-            if (hours < 10) hours = '0' + hours;
             let elmnt = document.getElementById('timer');
             let daysElement = document.getElementsByClassName('days')[0]
             daysElement.innerHTML = days
